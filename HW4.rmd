@@ -1,0 +1,32 @@
+---
+title: "R Bridge HW 4"
+author: "Sam CD"
+date: "November 29, 2015"
+output: html_document
+---
+Using data from
+ <http://catalog.data.gov/dataset/adult-arrests-by-county-beginning-1970>.
+
+I made inferences from a histogram:
+
+```{r,echo=FALSE}
+hist(data$Total)
+```
+
+to show that most counties in NY have crime rate on the lower end of the spectrum.
+
+A boxplot
+
+```{r, echo=FALSE}
+boxplot(Felony.Total ~ Misdemeanor.Total,data,xlab="Total Felonies",ylab="Total Misdemeanors")
+```
+
+shows that misdemeanors increase exponentially with regards to felonies
+
+and scatterplots and scatterplot matrices
+```{r, echo=FALSE}
+plot(data$Drug.Felony, data$Violent.Felony)
+pairs(~data$Total+data$Felony.Total+data$Drug.Felony+data$DWI.Felony)
+```
+
+show that the relationships are relatively linear otherwise.
